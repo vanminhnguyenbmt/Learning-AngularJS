@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS - Lesson 7</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/angular.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-app="handleEvent">
+    <div ng-controller="handleEventController">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Likes</th>
+                    <th>Minus</th>
+                    <th>Dislikes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="technology in technologies">
+                    <td>{{technology.Name}}</td>
+                    <td>{{technology.Likes}}</td>
+                    <td>{{technology.Minus}}</td>
+                    <td>{{technology.Dislikes}}</td>
+                    <td>
+                        <button ng-click="increaseLike(technology)">Like</button>
+                        <button ng-click="increaseDislike(technology)">Dislike</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
