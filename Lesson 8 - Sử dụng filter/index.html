@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AngularJS - Lesson 8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="filterDemoController">
+        Limit Row: <input type="number" ng-model="limitRow" />
+        Limit From: <input type="number" ng-model="limitFrom" />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Salary</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | limitTo:limitRow:limitFrom">
+                    <td>{{employee.name | uppercase}}</td>
+                    <td>{{employee.birthDate | date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.salary | currency:"VNĐ"}}</td>
+                    <td>{{employee.gender | lowercase}}</td>
+                    <td>{{employee.status | status}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
