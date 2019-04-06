@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="employee in employees">
+        <div>{{employee.name | uppercase}}</div>
+        <div>{{employee.birthDate | date:"dd/MM/yyyy"}}</div>
+        <div>{{employee.salary | currency:"VNĐ"}}</div>
+        <div>{{employee.gender | lowercase}}</div>
+        <div>{{employee.status | status}}</div>
+    </li>
+</ul>
